@@ -1,0 +1,7 @@
+name: HomePlugin
+version: 1.0
+author: Daniel
+main: com.daniel.home.Main
+commands:
+  sethome:
+  homes:

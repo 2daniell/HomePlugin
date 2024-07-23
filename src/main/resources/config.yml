@@ -1,0 +1,7 @@
+database:
+  type: MYSQL
+  host: 'localhost'
+  database: 'plugin'
+  port: '3306'
+  user: 'root'
+  password: 'root123'
