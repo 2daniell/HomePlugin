@@ -33,7 +33,7 @@ public class Home {
                 .addItemFlag(ItemFlag.HIDE_ENCHANTS)
                 .setDisplayName("§eHome: §f" + this.name)
                 .setLore(Arrays.asList(
-                        "§c" + UUID.randomUUID(),
+                        "§c" + id,
                         "",
                         "§7Localização:",
                         "   §7X: §f" + (int) location.getX(),

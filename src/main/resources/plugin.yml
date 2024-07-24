@@ -5,3 +5,4 @@ main: com.daniel.home.Main
 commands:
   sethome:
   homes:
+  home:

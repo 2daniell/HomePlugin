@@ -5,9 +5,8 @@ import com.daniel.home.core.database.Database;
 import com.daniel.home.model.entity.Home;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
+import java.util.UUID;
 
 public final class HomeController {
 
@@ -21,13 +20,21 @@ public final class HomeController {
         return database.findHome(player, page);
     }
 
-    /*public static Home getHome(Player player, String name) {
-        try {
-            //return database.findHome(player.getUniqueId(), name);
-        } catch (InterruptedException | ExecutionException e) {
-            throw new RuntimeException("Não foi possivel realizar a consulta: " + e);
-        }
-    }*/
+    public static Home getHome(Player player, String home) {
+        return database.findHome(player, home);
+    }
+
+    public static void insertHome(Home home) {
+        database.insertHome(home);
+    }
+
+    public static void delHome(UUID home) {
+        database.deleteHome(home);
+    }
+
+    public static boolean hasHome(Player player, String home) {
+        return database.hasHome(player, home);
+    }
 
     public static void createHome(Home home) {
         database.insertHome(home);

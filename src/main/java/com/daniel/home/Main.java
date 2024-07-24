@@ -1,5 +1,6 @@
 package com.daniel.home;
 
+import com.daniel.home.command.HomeCommand;
 import com.daniel.home.command.HomesCommand;
 import com.daniel.home.command.SetHomeCommand;
 import com.daniel.home.core.database.Database;
@@ -33,6 +34,7 @@ public class Main extends JavaPlugin {
     private void initCommands() {
         getCommand("homes").setExecutor(new HomesCommand());
         getCommand("sethome").setExecutor(new SetHomeCommand());
+        getCommand("home").setExecutor(new HomeCommand());
     }
     private void initListeners() {
         Bukkit.getPluginManager().registerEvents(new InventoryClick(), this);

@@ -22,6 +22,10 @@ public class SetHomeCommand implements CommandExecutor {
         }
 
         String name = args[0];
+        if (HomeController.hasHome(player, name)) {
+            player.sendMessage("§cHome já existente.");
+            return true;
+        }
         Home home = new Home(name, player.getLocation(), player.getUniqueId());
         HomeController.createHome(home);
         player.sendMessage("§aHome §f" + home.getName() + " §acriada com sucesso!");

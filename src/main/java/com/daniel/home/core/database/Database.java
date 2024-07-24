@@ -52,4 +52,5 @@ public abstract class Database implements IDatabase {
     public abstract Home findHome(Player player, String home);
     public abstract void insertHome(Home home);
     public abstract void deleteHome(UUID uuid);
+    public abstract boolean hasHome(Player player, String home);
 }

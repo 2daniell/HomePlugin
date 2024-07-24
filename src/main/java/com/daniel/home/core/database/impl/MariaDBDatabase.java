@@ -112,6 +112,28 @@ public class MariaDBDatabase extends Database {
     }
 
     @Override
+    public boolean hasHome(Player player, String home) {
+        final boolean[] exists = new boolean[1];
+
+        query("SELECT 1 FROM home_database WHERE name = ? AND owner = ? LIMIT 1", stm -> {
+            try {
+                stm.setString(1, home);
+                stm.setString(2, player.getUniqueId().toString());
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }, resultSet -> {
+            try {
+                exists[0] = resultSet.next();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        return exists[0];
+    }
+
+    @Override
     public void deleteHome(UUID uuid) {
         execute("DELETE FROM home_database WHERE uuid = ?", stm -> {
             try {

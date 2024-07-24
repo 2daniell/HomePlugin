@@ -5,3 +5,5 @@ database:
   port: '3306'
   user: 'root'
   password: 'root123'
+
+cooldown: 5 #em segundos
